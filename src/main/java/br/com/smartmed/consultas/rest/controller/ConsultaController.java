@@ -1,13 +1,16 @@
 package br.com.smartmed.consultas.rest.controller;
 
 import br.com.smartmed.consultas.model.ConsultaModel;
-import br.com.smartmed.consultas.rest.dto.ConsultaDTO;
+import br.com.smartmed.consultas.rest.dto.request.ConsultaDTO;
+import br.com.smartmed.consultas.rest.dto.request.agendamento.AutoAgendamentoRequestDTO;
+import br.com.smartmed.consultas.rest.dto.response.agendamento.AutoAgendamentoResponseDTO;
 import br.com.smartmed.consultas.service.ConsultaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -16,6 +19,7 @@ import java.util.List;
 public class ConsultaController {
     @Autowired
     private ConsultaService consultaService;
+
 
     @GetMapping("/{id}")
     public ResponseEntity<ConsultaDTO> obterPorId(@PathVariable long id) {
@@ -45,4 +49,12 @@ public class ConsultaController {
     public void deletar(@Valid @RequestBody ConsultaModel consultaExistente) {
         consultaService.deletar(consultaExistente);
     }
+
+    @PostMapping("/agendar-automatico")
+    public ResponseEntity<AutoAgendamentoResponseDTO> autoAgendar(@Valid  @RequestBody AutoAgendamentoRequestDTO agendamentoRequest) {
+        AutoAgendamentoResponseDTO responseDTO = consultaService.autoAgendamento(agendamentoRequest);
+        return ResponseEntity.ok(responseDTO);
+    }
+
+
 }

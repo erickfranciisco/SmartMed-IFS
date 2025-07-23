@@ -1,7 +1,7 @@
 package br.com.smartmed.consultas.rest.controller;
 
 import br.com.smartmed.consultas.model.RecepcionistaModel;
-import br.com.smartmed.consultas.rest.dto.RecepcionistaDTO;
+import br.com.smartmed.consultas.rest.dto.request.RecepcionistaDTO;
 import br.com.smartmed.consultas.service.RecepcionistaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

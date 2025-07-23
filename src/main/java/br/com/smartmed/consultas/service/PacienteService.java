@@ -3,12 +3,11 @@ package br.com.smartmed.consultas.service;
 import br.com.smartmed.consultas.exception.*;
 import br.com.smartmed.consultas.model.PacienteModel;
 import br.com.smartmed.consultas.repository.PacienteRepository;
-import br.com.smartmed.consultas.rest.dto.PacienteDTO;
+import br.com.smartmed.consultas.rest.dto.request.PacienteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 

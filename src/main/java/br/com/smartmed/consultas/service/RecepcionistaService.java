@@ -3,7 +3,7 @@ package br.com.smartmed.consultas.service;
 import br.com.smartmed.consultas.exception.*;
 import br.com.smartmed.consultas.model.RecepcionistaModel;
 import br.com.smartmed.consultas.repository.RecepcionistaRepository;
-import br.com.smartmed.consultas.rest.dto.RecepcionistaDTO;
+import br.com.smartmed.consultas.rest.dto.request.RecepcionistaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,13 +33,13 @@ public class RecepcionistaService {
     public RecepcionistaDTO salvar(RecepcionistaModel novoRecepcionista) {
         try {
             if (recepcionistaRepository.existsByCpf(novoRecepcionista.getCpf())) {
-                throw new ConstraintException("Já existe um recepcionista com esse CPF " + novoRecepcionista.getNome() + "cadastrado.");
+                throw new ConstraintException("Já existe um recepcionista com esse CPF " + novoRecepcionista.getNome() + " cadastrado.");
             }
 
             return recepcionistaRepository.save(novoRecepcionista).toDTO();
 
         } catch (DataIntegrityException e) {
-            throw new DataIntegrityException("Erro! Não foi possível salvar o recepcionista " + novoRecepcionista.getNome() + " !");
+            throw new DataIntegrityException("Erro! Não foi possível salvar o recepcionista " + novoRecepcionista.getNome() + "!");
         } catch (ConstraintException e) {
             if (e.getMessage() == null || e.getMessage().isBlank()) {
                 throw new ConstraintException("Erro de restrição de integridade ao salvar o recepcionista " + novoRecepcionista.getNome() + ".");

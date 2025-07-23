@@ -1,6 +1,6 @@
 package br.com.smartmed.consultas.model;
 
-import br.com.smartmed.consultas.rest.dto.MedicoDTO;
+import br.com.smartmed.consultas.rest.dto.request.MedicoDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -1,7 +1,7 @@
 package br.com.smartmed.consultas.rest.controller;
 
 import br.com.smartmed.consultas.model.MedicoModel;
-import br.com.smartmed.consultas.rest.dto.MedicoDTO;
+import br.com.smartmed.consultas.rest.dto.request.MedicoDTO;
 import br.com.smartmed.consultas.service.MedicoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

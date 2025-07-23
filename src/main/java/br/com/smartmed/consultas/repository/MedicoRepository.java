@@ -2,6 +2,7 @@ package br.com.smartmed.consultas.repository;
 
 import br.com.smartmed.consultas.model.MedicoModel;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -40,11 +41,25 @@ public interface MedicoRepository extends JpaRepository<MedicoModel, Integer> {
     // Ativo + Crm
     Optional<MedicoModel> findByAtivoAndCrm(boolean paramAtivo, String paramCrm);
 
-    /*
-    Especialiadade
-        List<MedicoModel> find
+    // Especialidade
+    List<MedicoModel> findByEspecialidadeId(int paramEspecialidadeId);
 
-    Especialdiade + Crm
-        Optional<MedicoModel> find
-     */
+/*
+==================================
+AGENDAMENTO AUTOMÁTICO DE CONSULTA
+==================================
+ */
+
+    @Query("""
+    SELECT m
+    FROM MedicoModel m
+    WHERE
+        (:paramEspecialidadeId = 0 AND :paramMedicoId = 0)
+        OR
+        (:paramEspecialidadeId != 0 AND m.especialidadeId = :paramEspecialidadeId)
+        OR
+        (:paramMedicoId != 0 AND m.id = :paramMedicoId)
+""")
+    List<MedicoModel> buscarPorEspecialidadeOuMedico(Integer paramEspecialidadeId, Integer paramMedicoId);
+
 }

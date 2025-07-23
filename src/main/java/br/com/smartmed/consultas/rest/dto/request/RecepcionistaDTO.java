@@ -1,4 +1,4 @@
-package br.com.smartmed.consultas.rest.dto;
+package br.com.smartmed.consultas.rest.dto.request;
 
 import java.time.LocalDate;
 

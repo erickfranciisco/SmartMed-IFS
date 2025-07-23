@@ -1,6 +1,6 @@
 package br.com.smartmed.consultas.model;
 
-import br.com.smartmed.consultas.rest.dto.EspecialidadeDTO;
+import br.com.smartmed.consultas.rest.dto.request.EspecialidadeDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

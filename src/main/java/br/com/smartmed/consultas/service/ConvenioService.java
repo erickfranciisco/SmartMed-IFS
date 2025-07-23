@@ -2,9 +2,8 @@ package br.com.smartmed.consultas.service;
 
 import br.com.smartmed.consultas.exception.*;
 import br.com.smartmed.consultas.model.ConvenioModel;
-import br.com.smartmed.consultas.repository.ConsultaRepository;
 import br.com.smartmed.consultas.repository.ConvenioRepository;
-import br.com.smartmed.consultas.rest.dto.ConvenioDTO;
+import br.com.smartmed.consultas.rest.dto.request.ConvenioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

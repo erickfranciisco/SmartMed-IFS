@@ -3,7 +3,7 @@ package br.com.smartmed.consultas.service;
 import br.com.smartmed.consultas.exception.*;
 import br.com.smartmed.consultas.model.MedicoModel;
 import br.com.smartmed.consultas.repository.MedicoRepository;
-import br.com.smartmed.consultas.rest.dto.MedicoDTO;
+import br.com.smartmed.consultas.rest.dto.request.MedicoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

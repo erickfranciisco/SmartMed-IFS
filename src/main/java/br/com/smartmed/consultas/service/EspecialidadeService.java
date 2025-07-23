@@ -3,7 +3,7 @@ package br.com.smartmed.consultas.service;
 import br.com.smartmed.consultas.exception.*;
 import br.com.smartmed.consultas.model.EspecialidadeModel;
 import br.com.smartmed.consultas.repository.EspecialidadeRepository;
-import br.com.smartmed.consultas.rest.dto.EspecialidadeDTO;
+import br.com.smartmed.consultas.rest.dto.request.EspecialidadeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

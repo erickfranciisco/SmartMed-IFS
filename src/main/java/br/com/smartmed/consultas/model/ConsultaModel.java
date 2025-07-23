@@ -1,6 +1,6 @@
 package br.com.smartmed.consultas.model;
 
-import br.com.smartmed.consultas.rest.dto.ConsultaDTO;
+import br.com.smartmed.consultas.rest.dto.request.ConsultaDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +28,9 @@ public class ConsultaModel {
 
     @Column(name = "valor", nullable = false)
     private float valor;
+
+    @Column(name = "tempoMedioConsultaMinutos", nullable = false)
+    private int tempoMedioConsultaMinutos;
 
     @Column(name = "observacoes", length = 1024)
     private String observacoes;
